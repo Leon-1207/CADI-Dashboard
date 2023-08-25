@@ -61,22 +61,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr @click="openPopup">
                 <td>John</td>
                 <td>Doe</td>
                 <td>2021-06-15</td>
               </tr>
-              <tr>
+              <tr @click="openPopup">
                 <td>Jane</td>
                 <td>Smith</td>
                 <td>2021-07-02</td>
               </tr>
-              <tr>
+              <tr @click="openPopup">
                 <td>Michael</td>
                 <td>Johnson</td>
                 <td>2021-08-10</td>
               </tr>
-              <tr>
+              <tr @click="openPopup">
                 <td>Sarah</td>
                 <td>Williams</td>
                 <td>2021-09-05</td>
@@ -179,6 +179,9 @@ export default {
   },
 
   methods: {
+    openPopup() {
+      this.$refs.popup.openPopup();
+    },
     tableJS() {
       // JavaScript for sorting the table
       const table = window.document.querySelector("table");
@@ -255,15 +258,6 @@ export default {
             row.style.display = "none";
           }
         });
-      });
-
-      // JavaScript for the popup
-      const tbody = table.tBodies.item(0);
-      tbody.addEventListener("click", function (event) {
-        const target = event.target.closest("tr");
-        if (target) {
-          this.$refs.popup.openPopup();
-        }
       });
     },
     toggleDashboardBoxesJS() {

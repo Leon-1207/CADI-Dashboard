@@ -23,7 +23,7 @@
 <script>
 export default {
   data() {
-    return { visible: true };
+    return { visible: false };
   },
   methods: {
     openPopup() {
@@ -37,6 +37,14 @@ export default {
 </script>
 
 <style>
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 .popup .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -51,16 +59,12 @@ export default {
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
 }
 
 .popup .content {
+  width: 100%;
   flex-direction: column;
-}
-
-.popup .content {
-  width: 400px;
-  max-width: 90vw;
   grid-column: 2 / 3;
   grid-row: 2 / 3;
 }
@@ -111,6 +115,7 @@ export default {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
   overflow: hidden;
-  width: 100%;
+  width: 400px;
+  max-width: 90vw;
 }
 </style>
