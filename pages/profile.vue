@@ -1,13 +1,13 @@
 <template>
-  <div style="position: relative;">
-    <div class="popup-overlay" style="display: block"></div>
-    <profile class="popup-content open" />
-  </div>
+  <popup ref="popup">
+    <profile></profile>
+  </popup>
 </template>
 
 <script>
-export default {}
+export default {
+  mounted() {
+    this.$refs.popup.openPopup();
+  },
+};
 </script>
-
-<style>
-</style>

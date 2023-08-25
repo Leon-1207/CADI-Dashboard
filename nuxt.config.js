@@ -40,7 +40,6 @@ export default {
     "~/assets/css/dashboard.css",
     "~/assets/css/inputs.css",
     "~/assets/css/main.css",
-    "~/assets/css/popup.css",
     "~/assets/css/table.css",
   ],
 
