@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'CADI-Dashboard',
+    title: 'Dashboard',
     htmlAttrs: {
       lang: 'en'
     },
@@ -18,12 +18,21 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css',
+        crossorigin: 'anonymous'
+      }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    "~/assets/css/dashboard.css",
+    "~/assets/css/inputs.css",
+    "~/assets/css/main.css",
+    "~/assets/css/popup.css",
+    "~/assets/css/table.css",
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

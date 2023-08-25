@@ -1,0 +1,176 @@
+.dashboard {
+    max-width: 674px;
+    padding: 1.75rem 1.25rem;
+    margin: auto;
+    width: auto;
+    display: grid;
+    column-gap: 1.25rem;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: start;
+    font-size: 0.9rem;
+}
+
+.dashboard, .box {
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+
+.dashboard * {
+    color: var(--primary-color);
+}
+
+.box {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    padding: 1rem;
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: none !important; 
+    overflow: hidden;
+    transition: all 0.3s ease;
+    margin-top: 1.25rem;
+}
+
+
+.box .title {
+    font-weight: 600;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    padding-right: 2.5rem;
+    min-height: 30px;
+    padding-top: 5px;
+    margin-bottom: 0.75rem;
+}
+
+.box .title>.icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    background: var(--accent-color-very-light);
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box .title>.icon i {
+    margin: auto;
+    font-size: 0.85rem;
+    color: var(--accent-color)
+}
+
+
+.dashboard .box> :first-child:not(.title) {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.small-box {
+    grid-column: span 1 !important;
+}
+
+@media (max-width: 480px) {
+    .dashboard .dashboard-headline {
+        font-size: 2rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .small-box {
+        grid-column: span 2 !important;
+        /* Applied when the screen width is <= 480px */
+    }
+}
+
+
+.dashboard p {
+    margin: 0;
+    text-align: left;
+}
+
+
+.dashboard-headline {
+    font-size: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    text-align: center;
+    grid-column: span 2;
+}
+
+
+.dashboard a, .dashboard a *, .dashboard .link, .dashboard .link * {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+.dashboard a:hover, .dashboard a:hover *,
+.dashboard .link:hover, .dashboard .link:hover * {
+    color: var(--accent-color-light);
+}
+
+.dashboard .key-info {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.option-with-icon {
+    display: grid;
+    grid-template-columns: 18px auto;
+    align-items: center;
+    cursor: pointer;
+}
+
+.option-with-icon :first-child {
+    width: 18px;
+    margin-right: 3px;
+}
+
+.option-with-icon * {
+    color: var(--accent-color);
+}
+
+.option-with-icon:hover * {
+    color: var(--accent-color-light);
+}
+
+.option-with-icon> :last-child {
+    margin-right: auto;
+}
+
+.dashboard button {
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.box .box-footer {
+    margin-top: 1rem;
+}
+
+.box.box-closed {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+}
+
+.box.toggle-box {
+    min-height: 0;
+}

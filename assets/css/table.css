@@ -1,0 +1,27 @@
+.dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.dashboard th {
+    cursor: pointer;
+    color: var(--primary-color);
+    text-align: left;
+    padding: 8px;
+}
+
+.dashboard th:hover {
+    color: var(--accent-color);
+}
+
+.dashboard td {
+    padding: 8px;
+}
+
+.dashboard tbody tr {
+    cursor: pointer;
+}
+
+.dashboard tbody tr:hover {
+    background-color: #ffffff61;
+}

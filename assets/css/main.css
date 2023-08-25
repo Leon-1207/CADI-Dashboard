@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif, Arial, Helvetica;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://wallpapercave.com/wp/wp6750203.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    --accent-color: #007BFF;
+    --accent-color-light: #6db3fe;
+    --accent-color-very-light: #cfe4fb;
+    --primary-color: #333333;
+    --primary-color-light: #4f4f4f;
+}
+
+html, body {
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.container {
+    padding: 3rem 1rem;
+    height: 100vh;
+    overflow: auto;
+}
+
+
+.dashboard .option-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 0.25rem;
+}
