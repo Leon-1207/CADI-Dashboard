@@ -189,28 +189,7 @@
 
     <!-- Popup -->
     <div class="popup-overlay"></div>
-    <div class="popup-content">
-      <div class="group">
-        <input type="text" required />
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label> Vorname </label>
-      </div>
-
-      <div class="group">
-        <input type="text" required />
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label> Nachname </label>
-      </div>
-
-      <div class="group">
-        <input type="date" required />
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label> Geburtsdatum </label>
-      </div>
-    </div>
+    <profile class="popup-content" />
   </div>
 </template>
 
