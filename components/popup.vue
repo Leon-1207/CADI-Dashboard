@@ -13,7 +13,7 @@
       <div
         class="button"
         v-for="(item, index) in 4"
-        :key="index"
+        :key="index + 4"
         @click="closePopup"
       ></div>
     </div>
