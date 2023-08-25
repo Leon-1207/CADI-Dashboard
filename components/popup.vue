@@ -36,9 +36,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .popup {
   position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
   top: 0;
   left: 0;
   width: 100vw;
