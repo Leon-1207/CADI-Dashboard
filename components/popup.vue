@@ -36,8 +36,9 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .popup {
+  --popup-border-radius: 0.5rem;
   position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
@@ -115,8 +116,7 @@ export default {
 .popup .popup-body {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 0.5rem;
-  overflow: hidden;
+  border-radius: var(--popup-border-radius);
   width: 400px;
   max-width: 90vw;
 }

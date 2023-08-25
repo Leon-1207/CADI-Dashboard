@@ -1,8 +1,11 @@
 <template>
   <div class="popup-body">
     <!-- profile image -->
-    <div class="profile-img-container">
-      <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
+    <!-- profile image -->
+    <div class="sticky-profile-img">
+      <div class="profile-img-container">
+        <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
+      </div>
     </div>
 
     <div class="popup-content-padding">
@@ -93,9 +96,25 @@ export default {};
 
 <style>
 .profile-img-container {
+  position: relative;
   width: 100%;
-  overflow: hidden;
   border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+}
+
+.sticky-profile-img {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  max-height: 280px;
+  border-radius: 20px 20px 0 0; /* Rounded top corners */
+}
+
+.profile-img,
+.sticky-profile-img,
+.profile-img-container {
+  border-top-left-radius: var(--popup-border-radius);
+  border-top-right-radius: var(--popup-border-radius);
 }
 
 .profile-img {

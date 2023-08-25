@@ -35,7 +35,6 @@
     flex-direction: column;
     background: rgba(255, 255, 255, 0.7) !important;
     border: none !important; 
-    overflow: hidden;
     transition: all 0.3s ease;
     margin-top: 1.25rem;
 }
