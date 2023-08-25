@@ -5,6 +5,15 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  router: {
+    base: "/CADI-Dashboard/"
+  },
+
+  // Allows page refresh to work on github pages
+  generate: {
+    fallback: "404.html"
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Dashboard',
