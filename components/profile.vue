@@ -1,11 +1,16 @@
 <template>
   <div class="popup-body">
     <!-- profile image -->
-    <!-- profile image -->
-    <div class="sticky-profile-img">
-      <div class="profile-img-container">
-        <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
-      </div>
+    <div class="static-profile-header">
+      <img
+        class="profile-img large-profile-img"
+        src="~/static/profileImg.png"
+        alt="Profilbild"
+      />
+    </div>
+    <div class="sticky-profile-header">
+      <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
+      <span>Max Mustermann</span>
     </div>
 
     <div class="popup-content-padding">
@@ -91,37 +96,81 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    const addListener = () => {
+      const isParentReady = !!this.$parent.$el.tagName;
+      if (isParentReady) this.$parent.$el.addEventListener("scroll", this.handleScroll);
+      else setTimeout(addListener, 100);
+    };
+    addListener();
+  },
+  beforeDestroy() {
+    this.$parent.$el.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+      const scrollY = this.$parent.$el.scrollTop;
+      const staticHeaderHeight = document.querySelector(".static-profile-header")
+        .offsetHeight;
+      const stickyHeaderHeight = document.querySelector(".sticky-profile-header")
+        .offsetHeight;
+
+      // Calculate the opacity for the sticky div
+      const transitionProgress = Math.max(
+        0,
+        Math.min(
+          (scrollY - staticHeaderHeight + stickyHeaderHeight) / staticHeaderHeight,
+          1
+        )
+      );
+
+      // Apply the new opacity to the sticky div
+      document.querySelector(".sticky-profile-header").style.opacity = transitionProgress;
+    },
+  },
+};
 </script>
 
 <style>
-.profile-img-container {
-  position: relative;
-  width: 100%;
-  border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+.static-profile-header {
+  margin-bottom: -100px;
 }
 
-.sticky-profile-img {
+.sticky-profile-header {
   position: sticky;
   top: 0;
+  display: flex;
   z-index: 1;
   width: 100%;
-  max-height: 280px;
-  border-radius: 20px 20px 0 0; /* Rounded top corners */
+  height: auto;
+  opacity: 0;
+  background: white;
+  overflow: hidden;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.profile-img,
-.sticky-profile-img,
-.profile-img-container {
+.sticky-profile-header .profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+  margin: 8px;
+}
+
+.profile-img {
   border-top-left-radius: var(--popup-border-radius);
   border-top-right-radius: var(--popup-border-radius);
 }
 
-.profile-img {
+.large-profile-img {
   width: 100%;
   clip-path: ellipse(85% 100% at 50% 0%);
   height: auto;
   max-height: 280px;
+}
+
+.profile-img {
   object-fit: cover;
 }
 

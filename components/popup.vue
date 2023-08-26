@@ -32,6 +32,9 @@ export default {
     closePopup() {
       this.visible = false;
     },
+    test() {
+      console.log("a");
+    },
   },
 };
 </script>
