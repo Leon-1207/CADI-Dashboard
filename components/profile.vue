@@ -10,10 +10,10 @@
     </div>
     <div class="sticky-profile-header">
       <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
-      <span>Max Mustermann</span>
+      <span class="name">Max Mustermann</span>
     </div>
 
-    <div class="popup-content-padding">
+    <div class="main-profile-content popup-content-padding">
       <basic-input label="Vorname" type="text"></basic-input>
       <basic-input label="Nachname" type="text"></basic-input>
       <basic-input label="Geburtsdatum" type="date"></basic-input>
@@ -30,66 +30,21 @@
         elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
         erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
         Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-        iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
-        te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
-        elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-        iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
-        dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
-        qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
-        facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet
-        doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-        dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-        exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
-        consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-        molestie consequat, vel illum dolore eu feugiat nulla facilisis. At vero eos et
-        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At
-        accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed
-        tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no
-        rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet.
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna aliquyam erat. Consetetur sadipscing
-        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum
+        dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos
+        et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+        takimata sanctus est Lorem ipsum dolor sit amet. est Lorem ipsum dolor sit amet.
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
         vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-        amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-        vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-        amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+        no sea takimata sanctus est Lorem ipsum dolor sit amet. At vero eos et accusam et
         justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
         est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
         elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
         erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
         Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-        Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-        consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et
-        iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore
-        te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing
-        elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-        suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum
-        iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
-        dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim
-        qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla
-        facilisi.
       </div>
     </div>
   </div>
@@ -135,6 +90,8 @@ export default {
 <style>
 .static-profile-header {
   margin-bottom: -100px;
+  max-height: 40vh;
+  overflow: hidden;
 }
 
 .sticky-profile-header {
@@ -149,32 +106,50 @@ export default {
   overflow: hidden;
   justify-content: flex-start;
   align-items: center;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.sticky-profile-header .name {
+  font-size: 1.2rem;
+  margin-left: 1rem;
+  color: var(--primary-color);
+}
+
+div.sticky-profile-header {
+  padding-top: 0.75rem;
+  padding-bottom: 1rem;
 }
 
 .sticky-profile-header .profile-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 4px;
-  margin: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
 
 .profile-img {
   border-top-left-radius: var(--popup-border-radius);
   border-top-right-radius: var(--popup-border-radius);
+  object-fit: cover;
 }
 
 .large-profile-img {
   width: 100%;
   clip-path: ellipse(85% 100% at 50% 0%);
   height: auto;
-  max-height: 280px;
+  max-height: 360px;
 }
 
-.profile-img {
-  object-fit: cover;
-}
-
-.popup-content-padding {
+.popup-content-padding,
+.sticky-profile-header {
   padding: 24px;
+}
+
+.main-profile-content {
+  border-bottom-left-radius: var(--popup-border-radius);
+  border-bottom-right-radius: var(--popup-border-radius);
 }
 </style>
