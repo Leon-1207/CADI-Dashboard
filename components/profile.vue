@@ -7,6 +7,7 @@
         src="~/static/profileImg.png"
         alt="Profilbild"
       />
+      <div class="curve-section"></div>
     </div>
     <div class="sticky-profile-header">
       <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
@@ -92,6 +93,19 @@ export default {
   margin-bottom: -100px;
   max-height: 40vh;
   overflow: hidden;
+  position: relative;
+}
+
+.static-profile-header .curve-section {
+  width: 200%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--popup-background);
+  top: 90%;
+  left: -50%;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+  position: absolute;
 }
 
 .sticky-profile-header {
@@ -138,7 +152,6 @@ div.sticky-profile-header {
 
 .large-profile-img {
   width: 100%;
-  clip-path: ellipse(85% 100% at 50% 0%);
   height: auto;
   max-height: 360px;
 }

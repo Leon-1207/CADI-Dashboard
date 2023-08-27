@@ -41,6 +41,7 @@ export default {
 
 <style>
 .popup {
+  --popup-background: #f8f8f8;
   --popup-border-radius: 1rem;
   position: fixed;
   overflow-y: auto;
@@ -117,7 +118,7 @@ export default {
 }
 
 .popup .popup-body {
-  background: #f8f8f8;
+  background: var(--popup-background);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: var(--popup-border-radius);
   width: var(--popup-target-width);
