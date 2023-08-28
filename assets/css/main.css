@@ -49,4 +49,18 @@ html, body {
     border: 0;
     cursor: pointer;
     text-decoration: none;
+    border: 1px transparent solid;
+}
+
+.basic-button:hover {
+    background: whitesmoke;
+    border: 1px var(--accent-color) solid;
+}
+
+.link-color {
+    color: var(--primary-color-light);
+}
+
+.link-color:hover {
+    color: var(--primary-color);
 }

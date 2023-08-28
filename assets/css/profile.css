@@ -95,8 +95,10 @@ div.sticky-profile-header {
 .sticky-profile-header .profile-img,
 .sticky-profile-header .basic-button,
 .small-shadow {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    /*
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-        rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+        rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; */
 }
 
 .sticky-profile-header .profile-img,
@@ -109,8 +111,8 @@ div.sticky-profile-header {
 
 @media (max-width: 480px) {
     .profile-navigation-buttons {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: repeat(3, 1fr) !important;
     }
 
     .sticky-profile-header .name-and-core-info {
@@ -195,6 +197,7 @@ div.sticky-profile-header {
 
 .profile-navigation-buttons>button.selected {
     background: var(--accent-color);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     color: white;
 }
 
@@ -204,4 +207,36 @@ div.sticky-profile-header {
 
 .profile-navigation-buttons>button.selected:hover>i {
     color: var(--accent-color-very-light);
+}
+
+.profile-rows-container {
+    display: grid;
+    gap: 1rem;
+}
+
+.profile-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto;
+}
+
+.profile-row .group {
+    margin-bottom: 0;
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 3px;
+    border-left: 3px solid white;
+    color: var(--primary-color);
+}
+
+.message.is-danger {
+    border-color: rgb(244, 67, 54);
+    background: rgba(244, 67, 54, 0.125);;
+}
+
+.message.is-success {
+    border-color: rgb(76, 175, 80);
+    background: rgba(76, 175, 80, 0.125);;
 }

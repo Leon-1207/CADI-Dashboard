@@ -93,9 +93,14 @@
         </button>
       </div>
 
-      <div class="popup-content-padding" style="padding-bottom: 0">
+      <div class="popup-content-padding" style="padding-top: 0">
         <!-- Content -->
-        <div style="background: red; width: 100%; height: 600px"></div>
+        <profile-participant v-if="displayedSection === 0" />
+        <profile-contacts v-else-if="displayedSection === 1" />
+        <profile-checkin v-else-if="displayedSection === 2" />
+        <profile-permissions v-else-if="displayedSection === 3" />
+        <profile-booking v-else-if="displayedSection === 4" />
+        <profile-transfer v-else-if="displayedSection === 5" />
       </div>
     </div>
   </div>
