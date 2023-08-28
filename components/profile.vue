@@ -10,17 +10,46 @@
       <div class="curve-section"></div>
     </div>
     <div class="sticky-profile-header">
-      <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
-      <profile-head-content style="margin-left: 1rem" />
+      <img
+        class="profile-img"
+        style="margin-right: 1rem"
+        src="~/static/profileImg.png"
+        alt="Profilbild"
+      />
+      <profile-head-content />
+      <div>
+        <a class="basic-button" href="tel:+XXXXXXXX" target="_blank">
+          <i class="fas fa-phone-volume"></i>
+        </a>
+        <a
+          class="basic-button"
+          href="https://wa.me/XXXXXXXXXXX"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
     </div>
 
-    <div class="main-profile-content popup-content-padding">
-      <!--   <expansion-panel icon="fas fa-user" title="Teilnehmer">
-        <basic-input label="Vorname" type="text"></basic-input>
-        <basic-input label="Nachname" type="text"></basic-input>
-        <basic-input label="Geburtsdatum" type="date"></basic-input>
-      </expansion-panel>-->
-      <profile-head-content />
+    <div class="main-profile-content popup-content-padding" style="padding-top: 0;">
+      <div style="display: flex; justify-content: center">
+        <profile-head-content />
+      </div>
+
+      <div class="static-contact-buttons">
+        <a class="basic-button" href="tel:+XXXXXXXX" target="_blank">
+          <i class="fas fa-phone-volume"></i>
+          Anrufen
+        </a>
+        <a
+          class="basic-button"
+          href="https://wa.me/XXXXXXXXXXX"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp
+        </a>
+      </div>
 
       <div class="profile-navigation-buttons">
         <button>
@@ -48,6 +77,8 @@
           <span>Transfer</span>
         </button>
       </div>
+
+      <div style="background: red; width: 100%; height: 600px"></div>
     </div>
   </div>
 </template>
@@ -96,7 +127,7 @@ export default {
 
 <style>
 .static-profile-header {
-  margin-bottom: -100px;
+  margin-bottom: -70px;
   max-height: 40vh;
   overflow: hidden;
   position: relative;
@@ -131,10 +162,12 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-.sticky-profile-header .name {
-  font-size: 1.2rem;
-  margin-left: 1rem;
-  color: var(--primary-color);
+.sticky-profile-header .basic-button {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
 }
 
 div.sticky-profile-header {
@@ -142,12 +175,11 @@ div.sticky-profile-header {
   padding-bottom: 1rem;
 }
 
-.sticky-profile-header .profile-img {
-  width: 48px;
-  height: 48px;
-  border-radius: 0.5rem;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
-    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+.sticky-profile-header > div:last-child {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 0.5rem;
+  margin-left: auto;
 }
 
 .profile-img {
@@ -189,10 +221,65 @@ div.sticky-profile-header {
   width: 100%;
 }
 
+.sticky-profile-header .name-and-core-info {
+  font-size: 1rem;
+}
+
+.sticky-profile-header .profile-img,
+.sticky-profile-header .basic-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px,
+    rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
 @media (max-width: 480px) {
   .profile-navigation-buttons {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+  }
+
+  .sticky-profile-header .name-and-core-info {
+    font-size: 0.8rem;
+  }
+
+  .sticky-profile-header .basic-button {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .static-contact-buttons {
+    font-size: 0.8rem;
+  }
+}
+
+.static-contact-buttons {
+  grid-template-columns: repeat(auto-fit, minmax(calc(50% - 0.5rem), 1fr));
+  gap: 0.7rem;
+  width: 100%;
+  display: grid;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.static-contact-buttons > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.static-contact-buttons i {
+  margin-right: 0.3rem;
+}
+
+.sticky-profile-header .profile-img {
+  display: block;
+}
+@media (max-width: 550px) {
+  .sticky-profile-header .profile-img {
+    display: none;
   }
 }
 

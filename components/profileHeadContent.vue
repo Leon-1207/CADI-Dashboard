@@ -2,7 +2,7 @@
   <div class="name-and-core-info">
     <div>
       <span>Lisa Tester</span>
-      <span>17</span>
+      <span>(17)</span>
     </div>
     <div>
       <div>
@@ -19,29 +19,31 @@
 
 <style>
 .name-and-core-info > div:first-child {
-  font-size: 1.5rem;
-  margin-bottom: 0.1rem;
-  font-weight: 600;
+  font-size: 1.4em;
+  margin-bottom: 0.2em;
 }
 
 .name-and-core-info > div:last-child {
-  font-size: 0.75rem;
+  font-size: 0.75em;
   display: flex;
   align-items: center;
   color: var(--primary-color-light);
 }
 
 .name-and-core-info > div:last-child > :last-child {
-    margin-left: 1rem;
+  margin-left: .75em;
+}
+
+.name-and-core-info > div:first-child > span:first-child {
+  color: var(--accent-color);
 }
 
 .name-and-core-info > div:first-child > span:last-child {
-  color: var(--primary-color-light);
-  font-weight: normal;
-  margin-left: 0.1rem;
+  color: var(--accent-color);
+  margin-left: 0.1em;
 }
 
 .name-and-core-info a {
-    color: var(--accent-primary-color);
+  color: var(--primary-color-light);
 }
 </style>
