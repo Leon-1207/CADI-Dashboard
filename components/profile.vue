@@ -93,7 +93,13 @@
         </button>
       </div>
 
-      <div class="popup-content-padding" style="padding-top: 0">
+      <div class="popup-content-padding" ref="content-section">
+        <!-- Section headline -->
+        <div v-if="displayedSection !== null" class="content-section-headline">
+          <i :class="navigationSections[displayedSection].icon"></i>
+          <span>{{ navigationSections[displayedSection].title }}</span>
+        </div>
+
         <!-- Content -->
         <profile-participant v-if="displayedSection === 0" />
         <profile-contacts v-else-if="displayedSection === 1" />
@@ -136,6 +142,15 @@ export default {
   methods: {
     navigationButtonClicked(index) {
       this.displayedSection = this.displayedSection === index ? null : index
+      if (this.displayedSection !== null) {
+        // scroll to content
+        this.$nextTick().then(() => {
+          this.$refs['content-section'].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+        })
+      }
     },
     handleScroll(event) {
       const scrollY = this.$parent.$el.scrollTop

@@ -240,3 +240,17 @@ div.sticky-profile-header {
     border-color: rgb(76, 175, 80);
     background: rgba(76, 175, 80, 0.125);;
 }
+
+.content-section-headline {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.content-section-headline > i {
+    font-size: 1.4rem;
+    margin-right: 0.25rem;
+}
+
+.content-section-headline > span {
+    font-size: 1.55rem;
+}
