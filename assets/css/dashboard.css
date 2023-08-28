@@ -18,7 +18,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .dashboard * {
@@ -34,7 +34,7 @@
     display: flex;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.7) !important;
-    border: none !important; 
+    border: none !important;
     transition: all 0.3s ease;
     margin-top: 1.25rem;
     overflow: hidden;
@@ -53,13 +53,16 @@
     margin-bottom: 0.75rem;
 }
 
-.box .title>.icon {
+.box .title>.dashboard-icon {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.dashboard-icon {
+    padding: 5px;
     border-radius: 100%;
     background: var(--accent-color-very-light);
-    padding: 5px;
     width: 30px;
     height: 30px;
     display: flex;
@@ -67,7 +70,7 @@
     justify-content: center;
 }
 
-.box .title>.icon i {
+.dashboard-icon i {
     margin: auto;
     font-size: 0.85rem;
     color: var(--accent-color)

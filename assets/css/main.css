@@ -13,6 +13,7 @@ body {
     --accent-color-very-light: #cfe4fb;
     --primary-color: #333333;
     --primary-color-light: #4f4f4f;
+    --primary-color-very-light: #dcdcdc;
     --popup-target-width: 600px;
 }
 
