@@ -37,6 +37,8 @@ export default {
     "~/assets/css/inputs.css",
     "~/assets/css/main.css",
     "~/assets/css/table.css",
+    "~/assets/css/traveler-stats.css",
+    "~/assets/css/profile.css"
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

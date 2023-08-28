@@ -1,0 +1,48 @@
+.traveler-stats-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.traveler-stats-container > .traveler-name {
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+
+.traveler-stats {
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1rem;
+}
+
+.traveler-stats>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.traveler-stats .label {
+    color: var(--primary-color-light);
+    font-size: 0.8em;
+    margin-top: 0.45em;
+    text-align: center;
+}
+
+.traveler-stats .value {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1em;
+    text-align: center;
+}
+
+.traveler-stats .v-line {
+    width: 1px;
+    height: 28px;
+    background: var(--primary-color-very-light);
+    margin-top: auto;
+    margin-bottom: auto;
+}

@@ -42,8 +42,4 @@
   color: var(--accent-color);
   margin-left: 0.1em;
 }
-
-.name-and-core-info a {
-  color: var(--primary-color-light);
-}
 </style>
