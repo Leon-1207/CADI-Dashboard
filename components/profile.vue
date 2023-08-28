@@ -11,47 +11,42 @@
     </div>
     <div class="sticky-profile-header">
       <img class="profile-img" src="~/static/profileImg.png" alt="Profilbild" />
-      <span class="name">Max Mustermann</span>
+      <profile-head-content style="margin-left: 1rem" />
     </div>
 
     <div class="main-profile-content popup-content-padding">
-      <expansion-panel icon="fas fa-user" title="Teilnehmer">
+      <!--   <expansion-panel icon="fas fa-user" title="Teilnehmer">
         <basic-input label="Vorname" type="text"></basic-input>
         <basic-input label="Nachname" type="text"></basic-input>
         <basic-input label="Geburtsdatum" type="date"></basic-input>
-      </expansion-panel>
+      </expansion-panel>-->
+      <profile-head-content />
 
-      <div>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-        clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-        amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-        nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-        est Lorem ipsum dolor sit amet. At vero eos et accusam et justo duo
-        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-        est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-        sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-        takimata sanctus est Lorem ipsum dolor sit amet. est Lorem ipsum dolor
-        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
-        ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet. At vero eos et accusam et justo duo dolores et ea
-        rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-        ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna
-        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-        est Lorem ipsum dolor sit amet.
+      <div class="profile-navigation-buttons">
+        <button>
+          <i class="fas fa-user"></i>
+          <span>Teilnehmer</span>
+        </button>
+        <button>
+          <i class="fas fa-address-book"></i>
+          <span>Kontakte</span>
+        </button>
+        <button>
+          <i class="fas fa-user-check"></i>
+          <span>Check-in</span>
+        </button>
+        <button>
+          <i class="fas fa-shield-check"></i>
+          <span>Erlaubnisse</span>
+        </button>
+        <button>
+          <i class="fas fa-bookmark"></i>
+          <span>Buchung</span>
+        </button>
+        <button>
+          <i class="fas fa-bus"></i>
+          <span>Transfer</span>
+        </button>
       </div>
     </div>
   </div>
@@ -186,11 +181,28 @@ div.sticky-profile-header {
   border-bottom-right-radius: var(--popup-border-radius);
 }
 
-.main-profile-content .dashboard-icon {
-  background: var(--primary-color-very-light);
+.profile-navigation-buttons {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  width: 100%;
 }
 
-.main-profile-content .dashboard-icon > i {
-  color: var(--primary-color);
+@media (max-width: 480px) {
+  .profile-navigation-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.profile-navigation-buttons > button {
+  background: white;
+  color: var(--accent-color);
+  outline: none;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border: none;
+  cursor: pointer;
 }
 </style>
