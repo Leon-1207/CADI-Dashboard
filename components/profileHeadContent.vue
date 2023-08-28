@@ -18,8 +18,13 @@
 </template>
 
 <style>
+.name-and-core-info a {
+  color: var(--primary-color-light);
+}
+
 .name-and-core-info > div:first-child {
   font-size: 1.4em;
+  color: var(--primary-color);
   margin-bottom: 0.2em;
 }
 
@@ -34,12 +39,7 @@
   margin-left: .75em;
 }
 
-.name-and-core-info > div:first-child > span:first-child {
-  color: var(--accent-color);
-}
-
 .name-and-core-info > div:first-child > span:last-child {
-  color: var(--accent-color);
   margin-left: 0.1em;
 }
 </style>
