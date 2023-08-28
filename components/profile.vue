@@ -15,9 +15,11 @@
     </div>
 
     <div class="main-profile-content popup-content-padding">
-      <basic-input label="Vorname" type="text"></basic-input>
-      <basic-input label="Nachname" type="text"></basic-input>
-      <basic-input label="Geburtsdatum" type="date"></basic-input>
+      <expansion-panel fa-icon="user" title="Teilnehmer">
+        <basic-input label="Vorname" type="text"></basic-input>
+        <basic-input label="Nachname" type="text"></basic-input>
+        <basic-input label="Geburtsdatum" type="date"></basic-input>
+      </expansion-panel>
 
       <div>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
