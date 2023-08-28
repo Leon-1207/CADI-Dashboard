@@ -60,12 +60,12 @@
 
       <!-- Contact buttons -->
       <div class="static-contact-buttons">
-        <a class="basic-button" href="tel:+XXXXXXXX" target="_blank">
+        <a class="basic-button small-shadow" href="tel:+XXXXXXXX" target="_blank">
           <i class="fas fa-phone-volume"></i>
           Anrufen
         </a>
         <a
-          class="basic-button"
+          class="basic-button small-shadow"
           href="https://wa.me/XXXXXXXXXXX"
           target="_blank"
         >
