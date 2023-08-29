@@ -27,7 +27,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'stylesheet', type: "text/css", href: '/font-awesome/css/all.min.css' }
+      { rel: 'stylesheet', type: "text/css", href: '/CADI-Dashboard/font-awesome/css/all.min.css' }
     ]
   },
 
