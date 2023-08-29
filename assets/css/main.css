@@ -43,18 +43,17 @@ html, body {
 .basic-button {
     border-radius: 100px;
     padding: 0.875em 1.15em;
-    background: var(--accent-color-very-light);
+    background: white;
     color: var(--accent-color);
     outline: none;
-    border: 0;
     cursor: pointer;
     text-decoration: none;
-    border: 1px transparent solid;
+    border: 1px var(--accent-color) solid;
 }
 
 .basic-button:hover {
-    background: whitesmoke;
-    border: 1px var(--accent-color) solid;
+    border: 1px transparent solid;
+    background: var(--accent-color-very-light);
 }
 
 .link-color {
