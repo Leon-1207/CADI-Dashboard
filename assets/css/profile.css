@@ -34,7 +34,7 @@
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-.sticky-profile-header .basic-button {
+.sticky-profile-header .basic-button, .square-button {
     padding: 0;
     display: flex;
     justify-content: center;
@@ -94,6 +94,7 @@ div.sticky-profile-header {
 
 .sticky-profile-header .profile-img,
 .sticky-profile-header .basic-button,
+.square-button,
 .small-shadow {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     /*
@@ -102,7 +103,7 @@ div.sticky-profile-header {
 }
 
 .sticky-profile-header .profile-img,
-.sticky-profile-header .basic-button {
+.sticky-profile-header .basic-button, .square-button {
     width: 48px;
     height: 48px;
     border-radius: 0.5rem;
@@ -119,7 +120,7 @@ div.sticky-profile-header {
         font-size: 0.8rem;
     }
 
-    .sticky-profile-header .basic-button {
+    .sticky-profile-header .basic-button, .square-button {
         width: 32px;
         height: 32px;
         font-size: 1rem;
@@ -221,7 +222,6 @@ div.sticky-profile-header {
 .profile-row {
     display: grid;
     gap: 1rem;
-    grid-template-columns: auto auto;
 }
 
 .profile-row .group {
@@ -239,13 +239,13 @@ div.sticky-profile-header {
 .message.is-danger {
     border-color: rgb(244, 67, 54);
     background: rgba(244, 67, 54, 0.125);
-    
+
 }
 
 .message.is-success {
     border-color: rgb(76, 175, 80);
     background: rgba(76, 175, 80, 0.125);
-    
+
 }
 
 .content-section-headline {
@@ -274,13 +274,13 @@ div.sticky-profile-header {
     font-size: 0.8rem;
 }
 
-.label-with-value>a {
+.label-with-value>a, .link {
     text-decoration: none;
     color: var(--accent-color);
     margin-right: auto;
 }
 
-.label-with-value>a:hover {
+.label-with-value>a:hover, .link:hover {
     color: var(--accent-color-light);
 }
 
