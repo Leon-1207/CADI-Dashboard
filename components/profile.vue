@@ -91,9 +91,21 @@
           <i :class="item.icon"></i>
           <span>{{ item.title }}</span>
         </button>
+
+        <div
+          style="
+            position: absolute;
+            pointer-events: none;
+            width: 100%;
+            height: 1rem;
+            bottom: 1rem;
+            left: 0;
+          "
+          ref="profile-content-scroll-target"
+        />
       </div>
 
-      <div class="popup-content-padding" ref="content-section">
+      <div class="popup-content-padding">
         <!-- Section headline -->
         <div v-if="displayedSection !== null" class="content-section-headline">
           <i :class="navigationSections[displayedSection].icon"></i>
@@ -145,7 +157,7 @@ export default {
       if (this.displayedSection !== null) {
         // scroll to content
         this.$nextTick().then(() => {
-          this.$refs['content-section'].scrollIntoView({
+          this.$refs['profile-content-scroll-target'].scrollIntoView({
             behavior: 'smooth',
             block: 'start',
           })
