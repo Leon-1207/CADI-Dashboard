@@ -107,7 +107,13 @@ div.sticky-profile-header {
     width: 48px;
     height: 48px;
     border-radius: 0.5rem;
+}
 
+.square-button.small {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
 }
 
 @media (max-width: 480px) {
@@ -120,7 +126,7 @@ div.sticky-profile-header {
         font-size: 0.8rem;
     }
 
-    .sticky-profile-header .basic-button, .square-button {
+    .sticky-profile-header .basic-button {
         width: 32px;
         height: 32px;
         font-size: 1rem;

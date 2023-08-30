@@ -63,3 +63,11 @@ html, body {
 .link-color:hover {
     color: var(--primary-color);
 }
+
+.content-side-by-side {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.5rem;
+    margin-right: auto;
+    align-items: center;
+}
