@@ -229,22 +229,23 @@ div.sticky-profile-header {
 }
 
 .message {
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 3px;
     border-left: 3px solid white;
     color: var(--primary-color);
+    font-size: 0.85rem;
 }
 
 .message.is-danger {
     border-color: rgb(244, 67, 54);
     background: rgba(244, 67, 54, 0.125);
-    ;
+    
 }
 
 .message.is-success {
     border-color: rgb(76, 175, 80);
     background: rgba(76, 175, 80, 0.125);
-    ;
+    
 }
 
 .content-section-headline {
