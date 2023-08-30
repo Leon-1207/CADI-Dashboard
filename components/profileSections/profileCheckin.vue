@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-rows-container">
+  <div class="profile-rows">
     <div class="label-with-value">
       <span>Dauermedikation:</span>
       <span>-</span>

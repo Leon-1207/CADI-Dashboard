@@ -1,5 +1,5 @@
 <template>
-  <div class="profile-rows-container large-gap">
+  <div class="profile-rows large-gap">
     <div class="label-with-value">
       <span>Reise:</span>
       <span>Actioncamp Alpensommer Zell am See 16-17 Jahre</span>

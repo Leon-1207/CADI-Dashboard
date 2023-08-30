@@ -216,21 +216,16 @@ div.sticky-profile-header {
     color: var(--accent-color-very-light);
 }
 
-.profile-rows-container {
+.profile-rows {
     display: grid;
+    gap: 1.5rem;
+}
+
+.profile-rows.small-gap {
     gap: 1rem;
 }
 
-.profile-rows-container.large-gap {
-    gap: 2rem;
-}
-
-.profile-row {
-    display: grid;
-    gap: 1rem;
-}
-
-.profile-row .group {
+.profile-rows .group {
     margin-bottom: 0;
 }
 

@@ -1,6 +1,6 @@
 <
 <template>
-  <div class="profile-rows-container">
+  <div class="profile-rows small-gap">
     <div class="message is-success ">
       <div class="message-body">
         Einverständnis Rettungsmaßnahmen, Erstehilfe und ärztliche Behandlung

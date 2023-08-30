@@ -1,10 +1,10 @@
 <template>
   <div>
     <div
-      class="profile-rows-container"
+      class="profile-rows"
       :class="{ 'extend-to-2-columns-420px': !edit }"
     >
-      <div v-if="edit" class="profile-row">
+      <div v-if="edit" class="profile-rows">
         <basic-input type="text" label="Vorname"></basic-input>
         <basic-input type="text" label="Nachname"></basic-input>
       </div>
@@ -13,9 +13,7 @@
         <span>Lisa Tester</span>
       </div>
 
-      <div v-if="edit" class="profile-row">
-        <basic-input type="date" label="Geburtsdatum"></basic-input>
-      </div>
+      <basic-input v-if="edit" type="date" label="Geburtsdatum"></basic-input>
       <div v-else class="label-with-value">
         <span>Geburtsdatum:</span>
         <span>01.01.2000</span>
@@ -37,7 +35,7 @@
         >
       </div>
     </div>
-    <div class="profile-rows-container" style="margin-top: 1.5rem">
+    <div class="profile-rows" style="margin-top: 1.5rem">
       <label class="checkbox_item citem_2">
         <label class="checkbox_wrap">
           <input type="checkbox" name="checkbox" class="checkbox_inp" />
