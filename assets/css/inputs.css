@@ -5,7 +5,7 @@
     margin-bottom: 1.5rem;
 }
 
-input {
+.group input {
     width: 100%;
     font-size: 1rem;
     padding: 10px 10px 10px 5px;
@@ -16,12 +16,12 @@ input {
     background: transparent;
 }
 
-input:focus {
+.group input:focus {
     outline: none;
 }
 
 /* LABEL ======================================= */
-label {
+.group label {
     color: var(--primary-color-light);
     font-size: 1rem;
     font-weight: normal;
@@ -35,26 +35,26 @@ label {
 }
 
 /* active state */
-input:focus~label, input:valid~label {
+.group input:focus~label, input:valid~label {
     top: -0.7rem;
     font-size: 0.8rem;
     color: var(--accent-color);
 }
 
 /* Fontawesome in label */
-label>i {
+.group label>i {
     font-size: 0.8em;
     margin-right: 0.125em;
 }
 
 /* BOTTOM BARS ================================= */
-.bar {
+.group .bar {
     position: relative;
     display: block;
     width: 100%;
 }
 
-.bar:before, .bar:after {
+.group .bar:before, .bar:after {
     content: '';
     height: 2px;
     width: 0;
@@ -65,21 +65,21 @@ label>i {
     -webkit-transition: 0.2s ease all;
 }
 
-.bar:before {
+.group .bar:before {
     left: 50%;
 }
 
-.bar:after {
+.group .bar:after {
     right: 50%;
 }
 
 /* active state */
-input:focus~.bar:before, input:focus~.bar:after {
+.group input:focus~.bar:before, input:focus~.bar:after {
     width: 50%;
 }
 
 /* HIGHLIGHTER ================================== */
-.highlight {
+.group .highlight {
     position: absolute;
     height: 60%;
     width: 100px;
@@ -90,7 +90,7 @@ input:focus~.bar:before, input:focus~.bar:after {
 }
 
 /* active state */
-input:focus~.highlight {
+.group input:focus~.highlight {
     -webkit-animation: inputHighlighter 0.3s ease;
     -moz-animation: inputHighlighter 0.3s ease;
     animation: inputHighlighter 0.3s ease;
@@ -130,10 +130,83 @@ input:focus~.highlight {
     }
 }
 
-input[type=date]:required:invalid::-webkit-datetime-edit {
+.group input[type=date]:required:invalid::-webkit-datetime-edit {
     color: transparent;
 }
 
-input[type=date]:focus:invalid::-webkit-datetime-edit {
+.group input[type=date]:focus:invalid::-webkit-datetime-edit {
+    color: var(--primary-color);
+}
+
+
+/* Toggle inputs */
+.checkbox_item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.checkbox_item .checkbox_wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    margin-right: .75rem;
+}
+
+.checkbox_item:last-child .checkbox_wrap {
+    margin-bottom: 0;
+}
+
+.checkbox_item .checkbox_wrap .checkbox_inp {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.checkbox_item .checkbox_wrap .checkbox_mark {
+    display: inline-block;
+    position: relative;
+    border-radius: 25px;
+}
+
+.checkbox_item .checkbox_wrap .checkbox_mark:before,
+.checkbox_item .checkbox_wrap .checkbox_mark:after {
+    content: '';
+    position: absolute;
+    transition: all 0.25s ease;
+}
+
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark {
+    border: 1px solid var(--primary-color);
+    width: 2.5rem;
+    height: 1.25rem;
+    padding: 2px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_mark:before {
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 1rem;
+    background: var(--primary-color-light);
+    border-radius: 25px;
+}
+
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked~.checkbox_mark {
+    border-color: var(--accent-color);
+}
+
+.checkbox_item.citem_2 .checkbox_wrap .checkbox_inp:checked~.checkbox_mark:before {
+    left: 1.1rem;
+    background: var(--accent-color);
+}
+
+.checkbox_item .checkbox-label {
     color: var(--primary-color);
 }
