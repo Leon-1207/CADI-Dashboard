@@ -129,17 +129,31 @@ export default {
   data() {
     return {
       navigationSections: [
-        { icon: 'fas fa-user', title: 'Teilnehmer' },
-        { icon: 'fas fa-address-book', title: 'Kontakte' },
-        { icon: 'fas fa-user-check', title: 'Check-in' },
-        { icon: 'fas fa-shield-check', title: 'Erlaubnisse' },
-        { icon: 'fas fa-bookmark', title: 'Buchung' },
-        { icon: 'fas fa-bus', title: 'Transfer' },
+        { icon: 'fas fa-user', title: 'Teilnehmer', hash: '#participant' },
+        { icon: 'fas fa-address-book', title: 'Kontakte', hash: '#contacts' },
+        { icon: 'fas fa-user-check', title: 'Check-in', hash: '#check-in' },
+        {
+          icon: 'fas fa-shield-check',
+          title: 'Erlaubnisse',
+          hash: '#permissions',
+        },
+        { icon: 'fas fa-bookmark', title: 'Buchung', hash: '#booking' },
+        { icon: 'fas fa-bus', title: 'Transfer', hash: '#transfer' },
       ],
       displayedSection: null,
     }
   },
   mounted() {
+    const routeHash = this.$route.hash
+    for (let i = 0; i < this.navigationSections.length; i++) {
+      const { hash } = this.navigationSections[i]
+      if (hash === routeHash) {
+        this.displayedSection = i
+        break
+      }
+    }
+
+    // scroll listener
     const addListener = () => {
       const isParentReady = !!this.$parent.$el.tagName
       if (isParentReady)
@@ -154,7 +168,10 @@ export default {
   methods: {
     navigationButtonClicked(index) {
       this.displayedSection = this.displayedSection === index ? null : index
+      let hash = null
       if (this.displayedSection !== null) {
+        hash = this.navigationSections[this.displayedSection].hash
+
         // scroll to content
         this.$nextTick().then(() => {
           this.$refs['profile-content-scroll-target'].scrollIntoView({
@@ -163,6 +180,7 @@ export default {
           })
         })
       }
+      this.$router.push({ path: '/profile', hash }) // update URL hash
     },
     handleScroll(event) {
       const scrollY = this.$parent.$el.scrollTop
