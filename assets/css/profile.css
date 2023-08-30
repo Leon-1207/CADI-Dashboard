@@ -237,12 +237,14 @@ div.sticky-profile-header {
 
 .message.is-danger {
     border-color: rgb(244, 67, 54);
-    background: rgba(244, 67, 54, 0.125);;
+    background: rgba(244, 67, 54, 0.125);
+    ;
 }
 
 .message.is-success {
     border-color: rgb(76, 175, 80);
-    background: rgba(76, 175, 80, 0.125);;
+    background: rgba(76, 175, 80, 0.125);
+    ;
 }
 
 .content-section-headline {
@@ -250,12 +252,12 @@ div.sticky-profile-header {
     margin-bottom: 1.5rem;
 }
 
-.content-section-headline > i {
+.content-section-headline>i {
     font-size: 1.4rem;
     margin-right: 0.25rem;
 }
 
-.content-section-headline > span {
+.content-section-headline>span {
     font-size: 1.55rem;
 }
 
@@ -265,8 +267,28 @@ div.sticky-profile-header {
     color: var(--primary-color);
 }
 
-.label-with-value > span:first-child {
+.label-with-value>span:first-child {
     color: var(--primary-color-light);
     margin-bottom: 0.25rem;
     font-size: 0.8rem;
+}
+
+.label-with-value>a {
+    text-decoration: none;
+    color: var(--accent-color);
+    margin-right: auto;
+}
+
+.label-with-value>a:hover {
+    color: var(--accent-color-light);
+}
+
+@media (max-width: 420px) {
+    .extend-to-2-columns-420px {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.extend-to-2-columns-420px {
+    grid-template-columns: 1fr 1fr;
 }

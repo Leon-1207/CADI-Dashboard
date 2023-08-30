@@ -1,19 +1,56 @@
 <template>
-  <div class="profile-rows-container">
-    <div class="profile-row">
-      <basic-input type="text" label="Vorname"></basic-input>
-      <basic-input type="text" label="Nachname"></basic-input>
+  <div>
+    <div
+      class="profile-rows-container"
+      :class="{ 'extend-to-2-columns-420px': !edit }"
+    >
+      <div v-if="edit" class="profile-row">
+        <basic-input type="text" label="Vorname"></basic-input>
+        <basic-input type="text" label="Nachname"></basic-input>
+      </div>
+      <div v-else class="label-with-value">
+        <span>Name:</span>
+        <span>Lisa Tester</span>
+      </div>
+
+      <div v-if="edit" class="profile-row">
+        <basic-input type="date" label="Geburtsdatum"></basic-input>
+      </div>
+      <div v-else class="label-with-value">
+        <span>Geburtsdatum:</span>
+        <span>01.01.2000</span>
+      </div>
+
+      <div class="label-with-value">
+        <span>Mobil:</span>
+        <a href="tel:+48511389219">+48511389219</a>
+      </div>
+
+      <div class="label-with-value">
+        <span>vCard:</span>
+        <a
+          href="https://my.camps.digital/teamer/teilnehmer/vcard.vcf?id=32170"
+          class="right tooltip is-tooltip-right has-tooltip-right-touch"
+          target="_blank"
+          ><i class="fas fa-address-book" style="margin-right: 0.25rem"></i
+          >Vcard Datei laden</a
+        >
+      </div>
     </div>
-    <div class="profile-row">
-      <basic-input type="date" label="Geburtsdatum"></basic-input>
-    </div>
-    <div></div>
-    <label class="checkbox_item citem_2">
-      <label class="checkbox_wrap">
-        <input type="checkbox" name="checkbox" class="checkbox_inp" />
-        <span class="checkbox_mark"></span>
+    <div class="profile-rows-container" style="margin-top: 1.5rem">
+      <label class="checkbox_item citem_2">
+        <label class="checkbox_wrap">
+          <input type="checkbox" name="checkbox" class="checkbox_inp" />
+          <span class="checkbox_mark"></span>
+        </label>
+        <span class="checkbox-label">Aktuell krank</span>
       </label>
-      <span class="checkbox-label">Aktuell krank</span>
-    </label>
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['edit'],
+}
+</script>
