@@ -224,6 +224,9 @@ div.sticky-profile-header {
 .profile-rows.small-gap {
     gap: 1rem;
 }
+.profile-rows.very-small-gap {
+    gap: 0.25rem;
+}
 
 .profile-rows .group {
     margin-bottom: 0;
@@ -252,15 +255,17 @@ div.sticky-profile-header {
 .content-section-headline {
     color: var(--primary-color);
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 .content-section-headline>i {
-    font-size: 1.4rem;
-    margin-right: 0.25rem;
+    font-size: 1.55rem;
+    margin-right: 0.75rem;
 }
 
 .content-section-headline>span {
-    font-size: 1.55rem;
+    font-size: 2rem;
 }
 
 .label-with-value {
@@ -293,4 +298,9 @@ div.sticky-profile-header {
 
 .extend-to-2-columns-420px {
     grid-template-columns: 1fr 1fr;
+}
+
+.profile-content-headline {
+    font-size: 1.5rem;
+    color: var(--primary-color);
 }
