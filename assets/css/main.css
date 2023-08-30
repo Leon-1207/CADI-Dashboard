@@ -71,3 +71,8 @@ html, body {
     margin-right: auto;
     align-items: center;
 }
+
+.h-line {
+    width: 100%;
+    border-bottom: 1px solid var(--primary-color-very-light);
+}
