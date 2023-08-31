@@ -112,7 +112,20 @@
             <i :class="navigationSections[displayedSection].icon"></i>
             <span>{{ navigationSections[displayedSection].title }}</span>
           </div>
-          <button class="basic-button">Bearbeiten</button>
+          <button
+            v-if="showEditButton && !editMode"
+            class="basic-button"
+            @click="toggleEditMode"
+          >
+            Bearbeiten
+          </button>
+          <button
+            v-else-if="showEditButton && editMode"
+            class="basic-button"
+            @click="toggleEditMode"
+          >
+            Fertig
+          </button>
         </div>
 
         <!-- Content -->
@@ -149,6 +162,7 @@
 export default {
   data() {
     return {
+      editMode: false,
       navigationSections: [
         {
           icon: 'fas fa-user',
@@ -197,7 +211,20 @@ export default {
     this.$parent.$el.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    toggleEditMode() {
+      this.setEditMode(!this.editMode)
+    },
+    setEditMode(newState) {
+      this.editMode = newState
+      try {
+        if (this.displayedSectionAttributes.hasEdit)
+          this.$refs.contentSection.setEdit(this.editMode)
+      } catch (error) {
+        console.error(error)
+      }
+    },
     navigationButtonClicked(index) {
+      this.setEditMode(false)
       this.displayedSection = this.displayedSection === index ? null : index
       let sectionId = null
       if (this.displayedSection !== null) {

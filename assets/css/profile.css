@@ -224,6 +224,7 @@ div.sticky-profile-header {
 .profile-rows.small-gap {
     gap: 1rem;
 }
+
 .profile-rows.very-small-gap {
     gap: 0.25rem;
 }
@@ -257,10 +258,33 @@ div.sticky-profile-header {
     margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
 }
 
-.content-section-headline > div {
+@media (max-width: 390px) {
+    div.content-section-headline>div>i {
+        font-size: 1.35rem;
+        margin-right: 0.5rem;
+    }
+
+    div.content-section-headline>div>span {
+        font-size: 1.75rem;
+    }
+
+    .content-section-headline>.basic-button {
+        padding: 0.5em 0.65em;
+        font-size: .7rem;
+    }
+}
+
+.content-section-headline>div {
     display: flex;
+    align-items: center;
+}
+
+.content-section-headline>.basic-button {
+    padding: 0.7em 0.8em;
 }
 
 .content-section-headline>div>i {

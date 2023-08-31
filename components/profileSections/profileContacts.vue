@@ -54,3 +54,16 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return { edit: false }
+  },
+  methods: {
+    setEdit(newState) {
+      this.edit = newState
+    },
+  },
+}
+</script>

@@ -1,9 +1,6 @@
 <template>
   <div>
-    <div
-      class="profile-rows"
-      :class="{ 'extend-to-2-columns-420px': !edit }"
-    >
+    <div class="profile-rows" :class="{ 'extend-to-2-columns-420px': !edit }">
       <div v-if="edit" class="profile-rows">
         <basic-input type="text" label="Vorname"></basic-input>
         <basic-input type="text" label="Nachname"></basic-input>
@@ -49,6 +46,13 @@
 
 <script>
 export default {
-  props: ['edit'],
+  data() {
+    return { edit: false }
+  },
+  methods: {
+    setEdit(newState) {
+      this.edit = newState
+    },
+  },
 }
 </script>
