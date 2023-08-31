@@ -180,7 +180,13 @@ export default {
           })
         })
       }
-      this.$router.push({ path: '/profile', hash }) // update URL hash
+
+      // update URL hash
+      if (history.pushState) {
+        history.pushState(null, null, hash || '')
+      } else {
+        location.hash = hash || ''
+      }
     },
     handleScroll(event) {
       const scrollY = this.$parent.$el.scrollTop
