@@ -201,9 +201,11 @@ export default {
     // scroll listener
     const addListener = () => {
       const isParentReady = !!this.$parent.$el.tagName
-      if (isParentReady)
+      if (isParentReady) {
         this.$parent.$el.addEventListener('scroll', this.handleScroll)
-      else setTimeout(addListener, 100)
+        if (this.displayedSection !== null)
+          this.$refs['profile-content-scroll-target'].scrollIntoView()
+      } else setTimeout(addListener, 100)
     }
     addListener()
   },
@@ -217,7 +219,10 @@ export default {
     setEditMode(newState) {
       this.editMode = newState
       try {
-        if (this.displayedSectionAttributes.hasEdit)
+        if (
+          this.displayedSectionAttributes &&
+          this.displayedSectionAttributes.hasEdit
+        )
           this.$refs.contentSection.setEdit(this.editMode)
       } catch (error) {
         console.error(error)
