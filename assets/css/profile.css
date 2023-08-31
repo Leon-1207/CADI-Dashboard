@@ -259,12 +259,16 @@ div.sticky-profile-header {
     align-items: center;
 }
 
-.content-section-headline>i {
+.content-section-headline > div {
+    display: flex;
+}
+
+.content-section-headline>div>i {
     font-size: 1.55rem;
     margin-right: 0.75rem;
 }
 
-.content-section-headline>span {
+.content-section-headline>div>span {
     font-size: 2rem;
 }
 

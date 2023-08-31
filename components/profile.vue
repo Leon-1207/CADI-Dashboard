@@ -108,17 +108,38 @@
       <div class="popup-content-padding">
         <!-- Section headline -->
         <div v-if="displayedSection !== null" class="content-section-headline">
-          <i :class="navigationSections[displayedSection].icon"></i>
-          <span>{{ navigationSections[displayedSection].title }}</span>
+          <div>
+            <i :class="navigationSections[displayedSection].icon"></i>
+            <span>{{ navigationSections[displayedSection].title }}</span>
+          </div>
+          <button class="basic-button">Bearbeiten</button>
         </div>
 
         <!-- Content -->
-        <profile-participant v-if="displayedSection === 0" />
-        <profile-contacts v-else-if="displayedSection === 1" />
-        <profile-checkin v-else-if="displayedSection === 2" />
-        <profile-permissions v-else-if="displayedSection === 3" />
-        <profile-booking v-else-if="displayedSection === 4" />
-        <profile-transfer v-else-if="displayedSection === 5" />
+        <profile-participant
+          ref="contentSection"
+          v-if="displayedSection === 0"
+        />
+        <profile-contacts
+          ref="contentSection"
+          v-else-if="displayedSection === 1"
+        />
+        <profile-checkin
+          ref="contentSection"
+          v-else-if="displayedSection === 2"
+        />
+        <profile-permissions
+          ref="contentSection"
+          v-else-if="displayedSection === 3"
+        />
+        <profile-booking
+          ref="contentSection"
+          v-else-if="displayedSection === 4"
+        />
+        <profile-transfer
+          ref="contentSection"
+          v-else-if="displayedSection === 5"
+        />
       </div>
     </div>
   </div>
@@ -129,25 +150,35 @@ export default {
   data() {
     return {
       navigationSections: [
-        { icon: 'fas fa-user', title: 'Teilnehmer', hash: '#participant' },
-        { icon: 'fas fa-address-book', title: 'Kontakte', hash: '#contacts' },
-        { icon: 'fas fa-user-check', title: 'Check-in', hash: '#check-in' },
+        {
+          icon: 'fas fa-user',
+          title: 'Teilnehmer',
+          sectionId: 'participant',
+          hasEdit: true,
+        },
+        {
+          icon: 'fas fa-address-book',
+          title: 'Kontakte',
+          sectionId: 'contacts',
+          hasEdit: true,
+        },
+        { icon: 'fas fa-user-check', title: 'Check-in', sectionId: 'check-in' },
         {
           icon: 'fas fa-shield-check',
           title: 'Erlaubnisse',
-          hash: '#permissions',
+          sectionId: 'permissions',
         },
-        { icon: 'fas fa-bookmark', title: 'Buchung', hash: '#booking' },
-        { icon: 'fas fa-bus', title: 'Transfer', hash: '#transfer' },
+        { icon: 'fas fa-bookmark', title: 'Buchung', sectionId: 'booking' },
+        { icon: 'fas fa-bus', title: 'Transfer', sectionId: 'transfer' },
       ],
       displayedSection: null,
     }
   },
   mounted() {
-    const routeHash = this.$route.hash
+    const routeQuerySection = this.$route.query.sectionId
     for (let i = 0; i < this.navigationSections.length; i++) {
-      const { hash } = this.navigationSections[i]
-      if (hash === routeHash) {
+      const { sectionId } = this.navigationSections[i]
+      if (sectionId === routeQuerySection) {
         this.displayedSection = i
         break
       }
@@ -168,9 +199,9 @@ export default {
   methods: {
     navigationButtonClicked(index) {
       this.displayedSection = this.displayedSection === index ? null : index
-      let hash = null
+      let sectionId = null
       if (this.displayedSection !== null) {
-        hash = this.navigationSections[this.displayedSection].hash
+        sectionId = this.navigationSections[this.displayedSection].sectionId
 
         // scroll to content
         this.$nextTick().then(() => {
@@ -181,12 +212,11 @@ export default {
         })
       }
 
-      // update URL hash
-      if (history.pushState) {
-        history.pushState(null, null, hash || '')
-      } else {
-        location.hash = hash || ''
-      }
+      // update URL parameters
+      const currentParameters = this.$route.query || {}
+      const params = { ...currentParameters }
+      params.section = sectionId || ''
+      this.addParamsToLocation(params)
     },
     handleScroll(event) {
       const scrollY = this.$parent.$el.scrollTop
@@ -210,6 +240,30 @@ export default {
       // Apply the new opacity to the sticky div
       document.querySelector('.sticky-profile-header').style.opacity =
         transitionProgress
+    },
+    addParamsToLocation(params) {
+      if (history.pushState) {
+        const newQuery = Object.keys(params)
+          .map((key) => {
+            return (
+              encodeURIComponent(key) + '=' + encodeURIComponent(params[key])
+            )
+          })
+          .join('&')
+        const newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?${newQuery}`
+        window.history.pushState({ path: newUrl }, '', newUrl)
+      }
+    },
+  },
+
+  computed: {
+    displayedSectionAttributes() {
+      if (this.displayedSection === null) return null
+      return this.navigationSections[this.displayedSection]
+    },
+    showEditButton() {
+      if (!this.displayedSectionAttributes) return false
+      return this.displayedSectionAttributes.hasEdit === true
     },
   },
 }
