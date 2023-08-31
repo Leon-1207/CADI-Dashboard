@@ -73,7 +73,6 @@ div.sticky-profile-header {
 
 /* Media query for screens with a minimum width of 1024px (adjust as needed) */
 @media screen and (min-width: 680px) {
-
     .popup-content-padding,
     .sticky-profile-header {
         padding-left: 40px;

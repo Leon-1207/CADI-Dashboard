@@ -1,12 +1,13 @@
 <template>
   <div v-if="visible" class="popup">
-    <div class="grid-container">
+    <div class="popup-grid-container">
       <div
         class="button"
         v-for="(item, index) in 4"
         :key="index"
         @click="closePopup"
       ></div>
+      <i id="popup-info">Klicke neben das Popup, um es zu schließen</i>
       <div class="content">
         <slot></slot>
       </div>
@@ -22,21 +23,23 @@
 
 <script>
 export default {
+  emits: ['on-close', 'on-open'],
+
   data() {
-    return { visible: false };
+    return { visible: false }
   },
+
   methods: {
     openPopup() {
-      this.visible = true;
+      this.$emit('on-open')
+      this.visible = true
     },
     closePopup() {
-      this.visible = false;
-    },
-    test() {
-      console.log("a");
+      this.$emit('on-close')
+      this.visible = false
     },
   },
-};
+}
 </script>
 
 <style>
@@ -52,10 +55,13 @@ export default {
   height: 100vh;
 }
 
-.popup .grid-container {
+.popup-grid-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: minmax(10vmin, auto) auto minmax(10vmin, auto);
+  grid-template-columns: minmax(var(--popup-margin), auto) 1fr minmax(
+      var(--popup-margin),
+      auto
+    );
+  grid-template-rows: minmax(10vmin, 1fr) auto minmax(10vmin, 1fr);
   width: 100vw;
   min-height: 100vh;
 }
@@ -77,7 +83,7 @@ export default {
 }
 
 /* Define grid areas */
-.popup .grid-container > * {
+.popup-grid-container > * {
   grid-area: auto;
 }
 
@@ -121,7 +127,17 @@ export default {
   background: var(--popup-background);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: var(--popup-border-radius);
-  width: var(--popup-target-width);
-  max-width: 90vw;
+  max-width: var(--popup-target-width);
+  width: 100%;
+}
+
+#popup-info {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 0.5rem;
+  text-align: center;
+  color: var(--primary-color-light);
+  font-size: 0.8rem;
 }
 </style>

@@ -188,9 +188,7 @@
     </div>
 
     <!-- Popup -->
-    <popup ref="popup">
-      <profile></profile>
-    </popup>
+    <profile-popup ref="popup" />
   </div>
 </template>
 

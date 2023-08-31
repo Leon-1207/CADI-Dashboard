@@ -15,6 +15,7 @@ body {
     --primary-color-light: #686868;
     --primary-color-very-light: #dcdcdc;
     --popup-target-width: 600px;
+    --popup-margin: 40px;
 }
 
 html, body {

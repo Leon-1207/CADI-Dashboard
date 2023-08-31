@@ -1,13 +1,11 @@
 <template>
-  <popup ref="popup">
-    <profile></profile>
-  </popup>
+  <profile-popup ref="popup" />
 </template>
 
 <script>
 export default {
   mounted() {
-    this.$refs.popup.openPopup();
+    this.$refs.popup.openPopup()
   },
-};
+}
 </script>
