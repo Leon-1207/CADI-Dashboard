@@ -302,7 +302,7 @@ div.sticky-profile-header {
     color: var(--primary-color);
 }
 
-.label-with-value>span:first-child {
+.label-with-value>*:first-child {
     color: var(--primary-color-light);
     margin-bottom: 0.25rem;
     font-size: 0.8rem;
