@@ -1,31 +1,50 @@
 <template>
   <div>
-    <div class="profile-rows" :class="{ 'extend-to-2-columns-420px': !edit }">
-      <div v-if="edit" class="profile-rows">
-        <basic-input type="text" label="Vorname"></basic-input>
-        <basic-input type="text" label="Nachname"></basic-input>
-      </div>
-      <div v-else class="label-with-value">
-        <span>Name:</span>
-        <span>Lisa Tester</span>
+    <div class="profile-rows extend-to-2-columns-420px">
+      <div class="label-with-value">
+        <label for="first-name">Name:</label>
+        <div v-if="edit" class="content-side-by-side">
+          <input
+            type="text"
+            name="first-name"
+            class="dashboard-input"
+            id="first-name"
+            placeholder="Vorname"
+          />
+          <input
+            type="text"
+            name="last-name"
+            class="dashboard-input"
+            id="last-name"
+            placeholder="Nachname"
+          />
+        </div>
+        <span v-else>Lisa Tester</span>
       </div>
 
-      <basic-input v-if="edit" type="date" label="Geburtsdatum"></basic-input>
-      <div v-else class="label-with-value">
-        <span>Geburtsdatum:</span>
-        <span>01.01.2000</span>
+      <div class="label-with-value">
+        <label for="date-of-birth">Geburtsdatum:</label>
+        <input
+          v-if="edit"
+          type="date"
+          name="date-of-birth"
+          class="dashboard-input"
+          id="date-of-birth"
+        />
+        <span v-else>01.01.2000</span>
       </div>
 
-      <basic-input
-        v-if="edit"
-        type="tel"
-        label="Mobil"
-        name="phone"
-        pattern="[+]{1}[0-9]{11,14}"
-      />
-      <div v-else class="label-with-value">
-        <span>Mobil:</span>
-        <a href="tel:+48511389219">+48511389219</a>
+      <div class="label-with-value">
+        <label for="phone">Mobil:</label>
+        <input
+          v-if="edit"
+          type="tel"
+          name="phone"
+          class="dashboard-input"
+          id="phone"
+          pattern="[+]{1}[0-9]{11,14}"
+        />
+        <a v-else href="tel:+48511389219">+48511389219</a>
       </div>
 
       <div class="label-with-value">
