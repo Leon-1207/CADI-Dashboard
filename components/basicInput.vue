@@ -1,6 +1,6 @@
 <template>
   <div class="group">
-    <input :type="type" required />
+    <input v-bind="$attrs" :type="type" required />
     <span class="highlight"></span>
     <span class="bar"></span>
     <label>{{ label }}</label>

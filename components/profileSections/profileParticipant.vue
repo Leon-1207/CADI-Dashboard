@@ -16,7 +16,14 @@
         <span>01.01.2000</span>
       </div>
 
-      <div class="label-with-value">
+      <basic-input
+        v-if="edit"
+        type="tel"
+        label="Mobil"
+        name="phone"
+        pattern="[+]{1}[0-9]{11,14}"
+      />
+      <div v-else class="label-with-value">
         <span>Mobil:</span>
         <a href="tel:+48511389219">+48511389219</a>
       </div>
