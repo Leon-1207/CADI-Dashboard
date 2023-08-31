@@ -175,7 +175,7 @@ export default {
     }
   },
   mounted() {
-    const routeQuerySection = this.$route.query.sectionId
+    const routeQuerySection = this.$route.query.section
     for (let i = 0; i < this.navigationSections.length; i++) {
       const { sectionId } = this.navigationSections[i]
       if (sectionId === routeQuerySection) {
