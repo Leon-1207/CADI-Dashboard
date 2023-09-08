@@ -242,13 +242,13 @@ div.sticky-profile-header {
 }
 
 .message.is-danger {
-    border-color: rgb(244, 67, 54);
+    border-color: var(--error-color);
     background: rgba(244, 67, 54, 0.125);
 
 }
 
 .message.is-success {
-    border-color: rgb(76, 175, 80);
+    border-color: var(--success-color);
     background: rgba(76, 175, 80, 0.125);
 
 }

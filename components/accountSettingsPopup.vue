@@ -134,7 +134,37 @@
         </div>
 
         <!-- toggles -->
-        <!-- TODO -->
+        <div class="label-with-value">
+          <label>Berechtigungen</label>
+          <div class="profile-rows very-small-gap">
+            <label
+              v-for="(item, index) in toggles"
+              :key="index"
+              class="checkbox_item citem_2"
+            >
+              <label v-if="editMode.settings" class="checkbox_wrap">
+                <input
+                  type="checkbox"
+                  name="checkbox"
+                  class="checkbox_inp"
+                  v-model="toggles[index].value"
+                />
+                <span class="checkbox_mark"></span>
+              </label>
+              <i
+                v-else-if="toggles[index].value"
+                style="width: 24px; color: var(--success-color)"
+                class="fas fa-check"
+              ></i>
+              <i
+                v-else
+                style="width: 24px; color: var(--error-color)"
+                class="fas fa-times"
+              ></i>
+              <span class="checkbox-label">{{ item.label }}</span>
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   </popup>
@@ -149,6 +179,11 @@ export default {
         settings: false,
       },
       bookingCopyEmails: ['tim.tester@wwd.de', 'max.mustermann@wwd.de'],
+      toggles: [
+        { label: 'Du kannst Buchungen selber bestätigen', value: true },
+        { label: 'Du kannst personenbezogene Daten ändern', value: true },
+        { label: 'Du kannst Buchungsoptionen ändern', value: false },
+      ],
     }
   },
 

@@ -16,6 +16,8 @@ body {
     --primary-color-very-light: #dcdcdc;
     --popup-target-width: 600px;
     --popup-margin: 40px;
+    --error-color: rgb(244, 67, 54);
+    --success-color: rgb(76, 175, 80);
 }
 
 html, body {
