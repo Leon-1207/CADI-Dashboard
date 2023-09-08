@@ -305,7 +305,7 @@ div.sticky-profile-header {
 .label-with-value>*:first-child {
     color: var(--primary-color-light);
     margin-bottom: 0.25rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 
 .label-with-value>a, .link {
