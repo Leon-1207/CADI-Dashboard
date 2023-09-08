@@ -73,22 +73,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr @click="openPopup">
+              <tr @click="openPopup('profile-popup')">
                 <td>John</td>
                 <td>Doe</td>
                 <td>2021-06-15</td>
               </tr>
-              <tr @click="openPopup">
+              <tr @click="openPopup('profile-popup')">
                 <td>Jane</td>
                 <td>Smith</td>
                 <td>2021-07-02</td>
               </tr>
-              <tr @click="openPopup">
+              <tr @click="openPopup('profile-popup')">
                 <td>Michael</td>
                 <td>Johnson</td>
                 <td>2021-08-10</td>
               </tr>
-              <tr @click="openPopup">
+              <tr @click="openPopup('profile-popup')">
                 <td>Sarah</td>
                 <td>Williams</td>
                 <td>2021-09-05</td>
@@ -182,7 +182,10 @@
               </div>
             </span>
             <div class="option-list">
-              <button class="option-with-icon">
+              <button
+                class="option-with-icon"
+                @click="openPopup('account-settings-popup')"
+              >
                 <i class="fas fa-user-cog"></i>
                 <span> Kontoeinstellungen </span>
               </button>
@@ -207,8 +210,9 @@
       </div>
     </div>
 
-    <!-- Popup -->
-    <profile-popup ref="popup" />
+    <!-- Popups -->
+    <profile-popup ref="profile-popup" />
+    <account-settings-popup ref="account-settings-popup" />
   </div>
 </template>
 
@@ -222,8 +226,8 @@ export default {
   },
 
   methods: {
-    openPopup() {
-      this.$refs.popup.openPopup()
+    openPopup(refKey) {
+      this.$refs[refKey].openPopup()
     },
     tableJS() {
       // JavaScript for sorting the table
