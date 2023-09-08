@@ -74,6 +74,11 @@
             />
             <span v-else>max.mustermann@example.com</span>
           </div>
+          <!-- agency -->
+          <div class="label-with-value">
+            <label>Agentur</label>
+            <span>Demo-Agentur</span>
+          </div>
         </div>
 
         <!-- gap between profile data and settings -->
