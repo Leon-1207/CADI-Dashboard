@@ -163,15 +163,35 @@
             </button>
           </div>
         </div>
+        <div>
+          <div class="box small-box">
+            <span class="title">
+              <span>Ausschreibung ansehen</span>
+              <div class="dashboard-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+            </span>
+            <a href="">Rom Wallfahrt 2024</a>
+          </div>
 
-        <div class="box small-box">
-          <span class="title">
-            <span>Ausschreibung ansehen</span>
-            <div class="dashboard-icon">
-              <i class="fas fa-file-alt"></i>
+          <div class="box small-box">
+            <span class="title">
+              <span>Profil</span>
+              <div class="dashboard-icon">
+                <i class="fas fa-user"></i>
+              </div>
+            </span>
+            <div class="option-list">
+              <button class="option-with-icon">
+                <i class="fas fa-user-cog"></i>
+                <span> Kontoeinstellungen </span>
+              </button>
+              <button class="option-with-icon">
+                <i class="fas fa-sign-out"></i>
+                <span> Logout </span>
+              </button>
             </div>
-          </span>
-          <a href="">Rom Wallfahrt 2024</a>
+          </div>
         </div>
 
         <div class="box">
