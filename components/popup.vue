@@ -57,10 +57,10 @@ export default {
 
 .popup-grid-container {
   display: grid;
-  grid-template-columns: minmax(var(--popup-margin), auto) 1fr minmax(
-      var(--popup-margin),
-      auto
-    );
+  grid-template-columns: minmax(var(--popup-margin), 1fr) minmax(
+      10fr,
+      var(--popup-target-width)
+    ) minmax(var(--popup-margin), 1fr);
   grid-template-rows: minmax(10vmin, 1fr) auto minmax(10vmin, 1fr);
   width: 100vw;
   min-height: 100vh;
