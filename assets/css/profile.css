@@ -73,6 +73,7 @@ div.sticky-profile-header {
 
 /* Media query for screens with a minimum width of 1024px (adjust as needed) */
 @media screen and (min-width: 680px) {
+
     .popup-content-padding,
     .sticky-profile-header {
         padding-left: 40px;
@@ -271,7 +272,7 @@ div.sticky-profile-header {
         font-size: 1.75rem;
     }
 
-    .content-section-headline>.basic-button {
+    .content-section-headline>.basic-button, .edit-section-button {
         padding: 0.5em 0.65em;
         font-size: .7rem;
     }
@@ -282,7 +283,7 @@ div.sticky-profile-header {
     align-items: center;
 }
 
-.content-section-headline>.basic-button {
+.content-section-headline>.basic-button, .edit-section-button {
     padding: 0.7em 0.8em;
 }
 
