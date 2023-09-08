@@ -94,6 +94,47 @@
             {{ editMode.settings ? 'Fertig' : 'Bearbeiten' }}
           </button>
         </div>
+        <div class="profile-rows extend-to-2-columns-420px">
+          <!-- event title -->
+          <div class="label-with-value">
+            <label>Titel der Veranstaltung</label>
+            <span>Demo Test Event 2023</span>
+          </div>
+          <!-- current event ID -->
+          <div class="label-with-value">
+            <label>Aktuelle Termin-ID</label>
+            <span>XY-123-01</span>
+          </div>
+        </div>
+        <!-- Booking copy emails -->
+        <div class="label-with-value">
+          <label>Buchungskopie</label>
+          <div v-if="editMode.settings" class="booking-copy-list">
+            <div v-for="(item, index) in bookingCopyEmails" :key="index">
+              <input
+                class="dashboard-input"
+                placeholder="example@domain.com"
+                type="email"
+                v-model="bookingCopyEmails[index]"
+              />
+              <button
+                class="basic-button"
+                @click="removeBookingCopyEmail(index)"
+              >
+                Entfernen
+              </button>
+            </div>
+            <button class="basic-button" @click="bookingCopyEmails.push('')">
+              Empfänger hinzufügen
+            </button>
+          </div>
+          <span v-else>
+            {{ bookingCopyEmails.join(', ') }}
+          </span>
+        </div>
+
+        <!-- toggles -->
+        <!-- TODO -->
       </div>
     </div>
   </popup>
@@ -107,6 +148,7 @@ export default {
         profileData: false,
         settings: false,
       },
+      bookingCopyEmails: ['tim.tester@wwd.de', 'max.mustermann@wwd.de'],
     }
   },
 
@@ -119,6 +161,9 @@ export default {
         this.editMode[key] = key === section ? !value : false // change the value for the clicked section and disable edit mode for all other sections
       })
     },
+    removeBookingCopyEmail(index) {
+      this.bookingCopyEmails.splice(index, 1) // 2nd parameter means remove one item only
+    },
   },
 }
 </script>
@@ -130,8 +175,38 @@ export default {
   align-items: stretch;
   width: 100%;
 }
+
 .settings-popup-section-headline-row > .edit-section-button {
   padding: 0 1rem;
   font-size: 0.75rem;
+}
+
+.booking-copy-list {
+  display: grid;
+  row-gap: 0.75rem;
+}
+
+.booking-copy-list button.basic-button {
+  font-size: 0.75rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: auto;
+}
+
+.booking-copy-list > * {
+  height: 1.35rem;
+  display: flex;
+  align-items: center;
+}
+
+.booking-copy-list > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+  align-items: baseline;
+}
+
+.booking-copy-list > div > button {
+  height: 100%;
 }
 </style>
